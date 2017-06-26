@@ -1,5 +1,5 @@
 postgres:
-  image: postgres
+  image: postgres:9.6-alpine
 rattic:
   build: .
   links:
@@ -7,7 +7,7 @@ rattic:
   environment:
   - SECRETKEY=set_to_something_else_when_deploying
 nginx:
-  image: nginx
+  image: nginx:stable-alpine
   links:
   - rattic
   volumes_from:
